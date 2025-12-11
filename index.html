@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Halloween</title>
+<style>
+    body {
+        background: black;
+        color: white;
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin-top: 150px;
+    }
+    .btn {
+        padding: 12px 30px;
+        font-size: 24px;
+        cursor: pointer;
+        border: none;
+        border-radius: 6px;
+        margin: 10px;
+        transition: 0.2s;
+    }
+    #yes { background: #4caf50; color: white; }
+    #no { background: #e53935; color: white; }
+    #yes:hover, #no:hover { transform: scale(1.1); }
+
+    video {
+        display: none;
+        width: 100%;
+        height: 100%;
+    }
+</style>
+</head>
+<body>
+
+<h1>¿Quieres celebrar Halloween conmigo?</h1>
+
+<button id="yes" class="btn">Sí</button>
+<button id="no" class="btn">No</button>
+
+<video id="scare" src="video.mp4"></video>
+
+<script>
+document.getElementById("yes").onclick = function () {
+    let v = document.getElementById("scare");
+    v.style.display = "block";
+    v.requestFullscreen();
+    v.play();
+};
+
+document.getElementById("no").onclick = function () {
+    alert("Oh no... >:(");
+};
+</script>
+
+</body>
+</html>
